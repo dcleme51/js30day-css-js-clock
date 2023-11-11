@@ -78,12 +78,34 @@
 // console.log("yoooooo"); 
 // create a time function and link this to the .hand styling so as the time ticks the 3 hands move.
 //day.js I couldnt see how I could utlise as it was given me options for date and time both together or just the date?
+
+const secondHand = document.querySelector('.second-hand');
+
 function setDate(){
 const now = new Date();
+
 const seconds = now.getSeconds();
-console.log(seconds);
+const secondsDegrees = ((seconds / 60) * 360) + 90;
+secondHand.style.transform = `rotate(${secondsDegrees}deg)`; // I dont understand this bit at all..but following through tutorial
+// console.log(seconds);
 }
 setInterval(setDate, 1000);
+
+//To make the minutes hand you can use the exact same code but changing the variables accordingly..
+
+const minsHand = document.querySelector('.mins-hand');
+
+const mins = now.getmins();
+const minsDegrees = ((mins / 60) * 360) + 90;
+minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+//Then you repat the process with the hour hand..
+
+const hourHand = document.querySelector('.hour-hand');
+
+const hour = now.getmins();
+const hourDegrees = ((hour / 12) * 360) + 90;
+hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
 
   </script>
